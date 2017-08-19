@@ -4,7 +4,7 @@ const burger = require('../models/burger')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('home route')
+  res.render('index')
 })
 
 router.get('/add', (req, res) => {

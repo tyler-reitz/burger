@@ -4,8 +4,13 @@ const router = require('./controller/burgers_controller')
 const methOver = require('method-override')
 const bodyParser = require('body-parser')
 
-const app = express()
+const exphbs = require('express-handlebars')
+
 const PORT = 3000
+const app = express()
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
 
 app.use(router)
 
