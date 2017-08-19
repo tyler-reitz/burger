@@ -2,6 +2,13 @@
 
 <ul>
   {{#each burger_data}}
-    <li>{{ this.burger_name }}</li>
+    {{#unless this.devoured}}
+      <li>{{ this.burger_name }}</li>
+    {{/unless}}
   {{/each}}
 </ul>
+
+<form method="POST" action="/add?_method=POST">
+  <input type="text" name="burger_name" placeholder="Black & Bleu">
+  <button type="submit">🍔</button>
+</form>
