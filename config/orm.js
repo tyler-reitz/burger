@@ -5,7 +5,7 @@ const orm = {
   selectAll(tbl, cb) {
     connection.query('SELECT * FROM ??', [tbl], (err, res) => {
       if (err) throw err
-      cb('all', res)
+      cb(res)
     })
   },
   
